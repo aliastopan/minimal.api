@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Taufan Augusta",
+    "classifications": [ "Web", "WebAPI", "Minimal" ],
+    "name": "ASP.NET Core Minimal Web API",
+    "identity": "MinimalApi.Solution.CSharp",
+    "groupIdentity": "MinimalApi.Solution",
+    "shortName": "minimal-api",
+    "tags": {
+      "language": "C#",
+      "type": "project"
+    },
+    "sourceName": "MinimalApi",
+    "preferNameDirectory": true,
+    "sources": [
+        {
+          "modifiers": [
+            {
+              "exclude": [
+                  ".git/**",
+                  ".vscode/**",
+                  ".gitignore",
+                  "LICENSE",
+                  "README.**"
+                ]
+            }
+          ]
+        }
+      ]
+}
