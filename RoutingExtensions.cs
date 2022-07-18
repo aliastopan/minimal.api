@@ -2,7 +2,7 @@ using System.Reflection;
 
 namespace MinimalApi;
 
-internal static class ConfigureRoutes
+internal static class RoutingExtensions
 {
     internal static IServiceCollection AddRouting(this IServiceCollection services, params Assembly[] assemblies)
     {
@@ -21,13 +21,13 @@ internal static class ConfigureRoutes
         return services;
     }
 
-    internal static WebApplication UseRouting(this WebApplication app)
+    internal static WebApplication UseRouteEndpoints(this WebApplication app)
     {
         var routes = app.Services.GetRequiredService<IReadOnlyCollection<IRouting>>();
 
-        foreach(var route in routes)
+        foreach(var endpoint in routes)
         {
-            route.MapRoutes(app);
+            endpoint.MapRoutes(app);
         }
 
         return app;

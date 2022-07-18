@@ -10,6 +10,6 @@ builder.Host.ConfigureServices((_, services) =>
 var app = builder.Build();
 
 app.UseHttpsRedirection();
-app.UseRouting();
+app.UseRouteEndpoints();
 
 app.Run();
