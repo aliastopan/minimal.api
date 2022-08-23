@@ -1,13 +1,13 @@
-namespace MinimalApi.Routing;
+namespace MinimalApi.Routes;
 
 record WeatherForecast(DateTime Date, int TemperatureC, string? Summary)
 {
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 }
 
-public class WeatherForecastRoute : IRouting
+public class WeatherForecastRoute : IRouteEndpoint
 {
-    public void MapRoutes(WebApplication app)
+    public void DefineEndpoints(WebApplication app)
     {
         app.Map("api/weatherforecast", GetWeatherForecast);
     }

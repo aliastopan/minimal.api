@@ -1,10 +1,10 @@
-using MinimalApi;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Host.ConfigureServices((_, services) =>
 {
-    services.AddRouting(typeof(IRouting).Assembly);
+    services.AddRouteEndpoints(Assembly.GetExecutingAssembly());
 });
 
 var app = builder.Build();
